@@ -1,0 +1,48 @@
+HTML elements:
+Hardcoded:
+
+Header
+div to display current state of defeated goblins
+div to display current state of goblins array
+div to display current state of player hp
+div to display player avatar state (alive or dead)
+
+Initial state:
+
+player hp: 10
+    when does state change?
+    on being hit hp decrements by 1
+
+number of goblins defeated: 0
+    when does state change?
+    when a goblins hp is decremented down to 0
+
+goblins: 
+    two goblins with 3 hp and a name
+    each goblin will be an object in an array of goblins
+
+Events:
+    entering a name and clicking challenge
+        > new goblin object will be created and pushed to goblin array
+        > goblin will get the name that was typed and 3 hp(can add random hp later)
+        > clear out goblin div 
+        > loop through the goblin data and use renderGoblin function to display new array of goblins
+            > if goblin hp is 0 display dead goblin
+
+    Clicking on goblins
+        > loop through goblin array and create event listener for each living goblin
+        > in loop set up a math.random that randomly decides if goblin was hit
+        > if goblin is hit then decrement goblin hp by one
+
+
+    Player hp
+        > on click of goblin if goblin is missed. set up math.random that will randomly determine that if you were hit
+        > on player hit decrement player hp 
+
+    Goblin Death
+        > when goblin hp reaches 0 that individual goblin will render unclickable.
+        > defeated goblins will increment in state and display in DOM
+
+
+
+
