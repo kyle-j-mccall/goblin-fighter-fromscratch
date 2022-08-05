@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     font-family: 'Rubik', san-serif;
-    background: var(--background);
+    background: black;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
@@ -18,37 +18,96 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--header-background);
+    background-color: black;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 4px 4px 3px rgba(255, 184, 255, 1);
+}
+
+.new-goblin {
+    justify-self: center;
 }
 
 main {
     display: grid;
     grid-template-rows: 1fr 4fr;
-    border: 2px solid black;
+    
     padding: 20px;
 }
 
 .top-grid {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 50% 50%;
     align-items: center;
-    border: 2px solid black;
+    justify-content: center;
+    border: 4px solid rgb(140, 216, 121);
+    background-color: rgb(92, 8, 92);
+    border-radius: 6px;
+    margin: 5px;
 }
 
 .bottom-grid {
     display: grid;
     grid-template-columns: 50% 50%;
+    /* background-color: rgb(230, 63, 166); */
+    background: url('./../assets/8-bit.jpg');
+    background-size: contain;
+    justify-content: center;
+    border: 4px solid rgb(140, 216, 121);
+    border-radius: 6px;
+    margin: 5px;
 }
 
 .player-container {
     display: flex;
     justify-content: center;
+    justify-self: center;
     align-items: center;
     height: 300px;
-    width: 300px;
+    width: 400px;
     margin: 10px;
     background-color: coral;
+    border: 3px solid white;
+    border-radius: 16px;
+    font-family: 'Press Start 2P', cursive;
+    box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+-webkit-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+-moz-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+    
 
+}
+
+.defeated-goblins {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    justify-self: center;
+    font-size: 20px;
+    
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    border: 2px solid white;
+}
+
+
+.defeated-goblins p {
+    
+    
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+button {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    justify-self: center;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    border: 2px solid white;
 }
 
 .goblin-container {
@@ -59,11 +118,46 @@ main {
 
 }
 
+input {
+    font-size: 20px
+}
+
 .goblin-list {
+    
+    margin: 10px;
+    width: 32rem;
+    text-align: center;
+    cursor: pointer;
+    border: 3px solid white;
+    border-radius: 16px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: transparent;
+    color: rgb(145, 207, 207);
+    box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+-webkit-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+-moz-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+transition: .05s all ease-in-out;
+}
+
+.dead-goblin {
     background-color: aquamarine;
     margin: 10px;
     width: 32rem;
     text-align: center;
+    cursor: pointer;
+    border: 3px solid white;
+    border-radius: 16px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: black;
+    color: rgb(145, 207, 207);
+    box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+-webkit-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+-moz-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+transition: .05s all ease-in-out;
+}
+
+.goblin-list:hover {
+    transform: rotate(2deg);
 }
 
 .player-avatar {
