@@ -68,7 +68,7 @@ function displayGoblins() {
             }
 
             if (goblin.hp === 0) {
-                alert(`You defeated ${goblin.name}`);
+                
                 defeatedGoblins++;
                 defeatedGoblinsEl.textContent = defeatedGoblins;
                 
