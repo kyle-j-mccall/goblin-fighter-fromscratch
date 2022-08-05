@@ -46,8 +46,24 @@ main {
     align-items: center;
     height: 300px;
     width: 300px;
+    margin: 10px;
     background-color: coral;
 
+}
+
+.goblin-container {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+
+}
+
+.goblin-list {
+    background-color: aquamarine;
+    margin: 10px;
+    width: 32rem;
+    text-align: center;
 }
 
 .player-avatar {
