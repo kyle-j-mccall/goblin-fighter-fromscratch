@@ -37,7 +37,7 @@ main {
 
 .top-grid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 20% 40%;
     align-items: center;
     justify-content: center;
     border: 4px solid rgb(140, 216, 121);
@@ -46,9 +46,17 @@ main {
     margin: 5px;
 }
 
+.fight {
+    justify-self: center;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 4px 4px 3px rgba(255, 184, 255, 1);
+    font-size: 30px;
+    color: white;
+}
+
 .bottom-grid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 20% 40%;
     /* background-color: rgb(230, 63, 166); */
     background: url('./../assets/8-bit.jpg');
     background-size: contain;
@@ -66,7 +74,9 @@ main {
     height: 300px;
     width: 400px;
     margin: 10px;
-    background-color: coral;
+    background-color: rgb(204, 95, 204);
+    
+    color: white;
     border: 3px solid white;
     border-radius: 16px;
     font-family: 'Press Start 2P', cursive;
@@ -81,12 +91,12 @@ main {
     font-family: 'Orbitron', sans-serif;
     font-weight: bold;
     justify-self: center;
-    font-size: 20px;
-    
+    font-size: 20px; 
     background-color: black;
     color: white;
     border-radius: 4px;
     border: 2px solid white;
+    
 }
 
 
@@ -97,6 +107,7 @@ main {
     margin-right: 10px;
     margin-top: 2px;
     margin-bottom: 2px;
+    
 }
 
 button {
@@ -125,7 +136,9 @@ input {
 .goblin-list {
     
     margin: 10px;
-    width: 32rem;
+    width: 22rem;
+    padding: 2px;
+    font-size: 10px;
     text-align: center;
     cursor: pointer;
     border: 3px solid white;
@@ -139,21 +152,72 @@ input {
 transition: .05s all ease-in-out;
 }
 
+.goblin-list:active {
+    transform:rotateX(90deg);
+}
+
 .dead-goblin {
-    background-color: aquamarine;
+    background-color: gainsboro;
     margin: 10px;
-    width: 32rem;
+    width: 22rem;
+    padding: 2px;
+    font-size: 10px;
     text-align: center;
-    cursor: pointer;
+    pointer-events: none;
     border: 3px solid white;
     border-radius: 16px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Orbitron', sans-serif;
     background-color: black;
     color: rgb(145, 207, 207);
-    box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
--webkit-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
--moz-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
-transition: .05s all ease-in-out;
+    -webkit-user-select: none; 
+    /* -khtml-user-select: none; */
+
+    
+}
+
+/* .hit-message {
+    background-color: white;
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+
+} */
+
+.hit-container {
+    display: grid;
+    grid-template-rows: 60% 40%;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+p {
+    text-align: center;
+}
+
+.hit-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    padding: 10px;
+    background-color: darkseagreen;
+    border-radius: 6px;
+    border: 8px dotted white;
+    box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
+    -webkit-box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
+    -moz-box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
+    transition: .05s all ease-in-out;
+    transition: all 1s ease-in-out;
+
+}
+
+
+.goblin-emoji {
+    font-size: 40px;
+    margin: 0;
 }
 
 .goblin-list:hover {
@@ -173,3 +237,4 @@ footer {
     justify-content: flex-end;
     background-color: var(--footer-background);
 }
+

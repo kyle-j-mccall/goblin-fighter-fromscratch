@@ -1,29 +1,18 @@
 export function renderGoblin(name, hp) {
     const goblinDiv = document.createElement('div');
+    const goblinEmoji = document.createElement('p');
     const goblinNameEl = document.createElement('p');
     const goblinHpEl = document.createElement('p');
 
-    goblinDiv.classList.add('goblin-list');
-
-    goblinNameEl.textContent = `${name} 😈`;
+    hp > 0 ? goblinDiv.classList.add('goblin-list') : goblinDiv.classList.add('dead-goblin');
+    goblinEmoji.classList.add('goblin-emoji');
+    goblinEmoji.textContent = hp > 0 ? '😈' : '☠️';
+    goblinNameEl.textContent = `${name} `;
     goblinHpEl.textContent = `HP: ${hp}`;
 
-    goblinDiv.append(goblinNameEl, goblinHpEl);
+    goblinDiv.append(goblinEmoji, goblinNameEl, goblinHpEl);
 
     return goblinDiv;
 }
 
-export function renderDeadGoblin(name, hp) {
-    const goblinDiv = document.createElement('div');
-    const goblinNameEl = document.createElement('p');
-    const goblinHpEl = document.createElement('p');
 
-    goblinDiv.classList.add('goblin-list');
-
-    goblinNameEl.textContent = name;
-    goblinHpEl.textContent = hp;
-
-    goblinDiv.append(goblinNameEl, goblinHpEl);
-
-    return goblinDiv;
-}

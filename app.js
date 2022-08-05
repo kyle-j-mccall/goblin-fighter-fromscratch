@@ -1,19 +1,15 @@
-// import functions and grab DOM elements
-
-// let state
-
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
 
 import { renderGoblin } from './render-goblin.js';
+import { renderGoblinHitMessage } from './render-hit.js';
+
 
 const formEl = document.querySelector('form');
 const goblinInput = document.getElementById('goblin-input');
 const goblinContainerEL = document.querySelector('.goblin-container');
 const defeatedGoblinsEl = document.getElementById('goblins-defeated');
-const playerHpEl = document.querySelector('.player-hp');
+const playerHpEl = document.querySelector('#player-hp');
+const hitMessageContainer = document.querySelector('.message-container');
+const playerAvatar = document.querySelector('.player-avatar');
 
 let defeatedGoblins = 0;
 let playerHp = 10;
@@ -37,7 +33,7 @@ formEl.addEventListener('submit', (e) => {
 
     const newGoblin = {
         name: goblinName,
-        hp: Math.floor(Math.random() * 7)
+        hp: Math.ceil(Math.random() * 7)
     };
 
     goblinsArr.push(newGoblin);
@@ -56,9 +52,9 @@ function displayGoblins() {
     goblinContainerEL.textContent = '';
 
     
-    
     for (let goblin of goblinsArr) {
         const renderedGoblin = renderGoblin(goblin.name, goblin.hp);
+        
 
         goblinContainerEL.append(renderedGoblin);
 
@@ -66,6 +62,7 @@ function displayGoblins() {
             
             if (Math.random() > .3) {
                 goblin.hp--;
+                displayHits(goblin, playerHp);
                 
                 
             }
@@ -74,6 +71,9 @@ function displayGoblins() {
                 alert(`You defeated ${goblin.name}`);
                 defeatedGoblins++;
                 defeatedGoblinsEl.textContent = defeatedGoblins;
+                
+                
+
             }
 
             if (Math.random() * .7) {
@@ -82,19 +82,29 @@ function displayGoblins() {
             }
 
             if (playerHp === 0) {
-                alert('You Died');
+                playerAvatar.textContent = '🧟‍♂️';
+                displayHits(goblin, playerHp);
             }
             
             console.log(playerHp);
             console.log(goblin.hp);
             displayGoblins();
         });
-    }
+
+
+    } 
 
     
     
 } 
 
 displayGoblins();
+
+function displayHits(goblinObj, playerHp) {
+    hitMessageContainer.textContent = '';
+    const hitMessage = renderGoblinHitMessage(goblinObj, playerHp);
+    hitMessageContainer.append(hitMessage);
+}
+
 
 
