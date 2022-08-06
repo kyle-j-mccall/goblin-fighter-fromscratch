@@ -137,6 +137,7 @@ function resetGame() {
     playerHp = 10;
     defeatedGoblins = 0;
     playerAvatar.textContent = '🦸';
+    
     playerHpEl.textContent = playerHp;
     goblinsArr = [
         {
