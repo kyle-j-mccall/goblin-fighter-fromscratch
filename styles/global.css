@@ -68,13 +68,14 @@ main {
 
 .player-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     justify-self: center;
     align-items: center;
     height: 300px;
     width: 400px;
     margin: 10px;
-    background-color: rgb(204, 95, 204);
+    background-color: rgb(136, 24, 61);
     
     color: white;
     border: 3px solid white;
@@ -169,27 +170,18 @@ transition: .05s all ease-in-out;
     font-family: 'Orbitron', sans-serif;
     background-color: black;
     color: rgb(145, 207, 207);
-    -webkit-user-select: none; 
-    /* -khtml-user-select: none; */
+    
+    
 
     
 }
 
-/* .hit-message {
-    background-color: white;
-    color: black;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 30px;
-
-} */
 
 .hit-container {
     display: grid;
     grid-template-rows: 60% 40%;
     justify-content: center;
     align-items: center;
-    
-    
 }
 
 p {
@@ -216,6 +208,24 @@ p {
 
 }
 
+.game-over-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    padding: 10px;
+    background-color:black;
+    border-radius: 6px;
+    border: 8px dotted red;
+    text-shadow: 4px 4px 0px rgba(255, 186, 216, 0.45);
+    color:white;
+    box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
+    -webkit-box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
+    -moz-box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
+    transition: 1s all ease-in-out;
+}
+
 
 .goblin-emoji {
     font-size: 40px;
@@ -231,6 +241,17 @@ p {
     font-size: 18px;
     color: black;
 
+}
+
+.new-game-container {
+    display: flex;
+    justify-content: center;
+}
+
+.new-game-button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+    cursor: pointer;
 }
 
 
