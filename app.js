@@ -1,6 +1,6 @@
 
 import { renderGoblin } from './render-goblin.js';
-import { renderGoblinHitMessage, renderGameOverMessage } from './render-messages.js';
+import { renderGoblinHitMessage, renderGameOverMessage, renderMissMessage } from './render-messages.js';
 import { renderNewGameButton } from './render-newgame-button.js';
 
 
@@ -12,6 +12,8 @@ const playerHpEl = document.querySelector('#player-hp');
 const hitMessageContainer = document.querySelector('.message-container');
 const playerAvatar = document.querySelector('.player-avatar');
 const newGameButtonContainer = document.querySelector('.new-game-container');
+const playerContainer = document.querySelector('.player-container');
+const playerGrid = document.querySelector('.bottom-grid');
 
 
 
@@ -58,7 +60,7 @@ function displayGoblins() {
 
 
     for (let goblin of goblinsArr) {
-        const renderedGoblin = renderGoblin(goblin.name, goblin.hp);
+        const renderedGoblin = renderGoblin(goblin.name, goblin.hp, playerHp);
 
 
         goblinContainerEL.append(renderedGoblin);
@@ -70,7 +72,9 @@ function displayGoblins() {
                 displayHits(goblin);
 
 
-            }
+            } else {
+                displayMiss();
+            } 
 
             if (goblin.hp === 0) {
 
@@ -83,7 +87,10 @@ function displayGoblins() {
 
             if (Math.random() * .7) {
                 playerHp--;
+               
                 playerHpEl.textContent = playerHp;
+            
+
             }
 
             if (playerHp === 0) {
@@ -91,6 +98,7 @@ function displayGoblins() {
                 displayHits(goblin, playerHp);
                 displayGameOverMessage();
                 displayNewGameButton();
+
 
 
             }
@@ -115,6 +123,14 @@ function displayHits(goblinObj) {
     const hitMessage = renderGoblinHitMessage(goblinObj);
     hitMessageContainer.append(hitMessage);
 }
+
+function displayMiss() {
+    hitMessageContainer.textContent = '';
+    const missMessage = renderMissMessage();
+    hitMessageContainer.append(missMessage);
+}
+
+
 
 
 

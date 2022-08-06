@@ -16,6 +16,20 @@ export function renderGoblinHitMessage(goblinObj) {
     return hitDiv;
 }
 
+export function renderMissMessage() {
+    const missDiv = document.createElement('div');
+    const missMessage = document.createElement('p');
+
+    missMessage.textContent = 'MISS!';
+    
+    missDiv.classList.add('miss-message');
+
+    missDiv.append(missMessage);
+
+    return missDiv;
+}
+
+
 export function renderGameOverMessage(playerhp) {
     const gameOverDiv = document.createElement('div');
     const gameOverMessage = document.createElement('p');
@@ -30,3 +44,4 @@ export function renderGameOverMessage(playerhp) {
 
     return gameOverDiv;
 }
+

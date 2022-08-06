@@ -22,6 +22,7 @@ header {
     color: white;
     font-family: 'Press Start 2P', cursive;
     text-shadow: 4px 4px 3px rgba(255, 184, 255, 1);
+    animation: myAnimheader .5s ease 0s infinite normal forwards;
 }
 
 .new-goblin {
@@ -52,6 +53,7 @@ main {
     text-shadow: 4px 4px 3px rgba(255, 184, 255, 1);
     font-size: 30px;
     color: white;
+    animation: myAnimfight 1s linear 0s infinite normal both;
 }
 
 .bottom-grid {
@@ -84,6 +86,7 @@ main {
     box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
 -webkit-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
 -moz-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+
     
 
 }
@@ -163,6 +166,25 @@ input {
 transition: .05s all ease-in-out;
 }
 
+.game-over-goblin-list {
+    
+    margin: 10px;
+    width: 22rem;
+    padding: 2px;
+    font-size: 10px;
+    text-align: center;
+    pointer-events: none;
+    border: 3px solid white;
+    border-radius: 16px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: transparent;
+    color: rgb(145, 207, 207);
+    box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+-webkit-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+-moz-box-shadow: 21px 39px 67px -22px rgba(0,0,0,1);
+transition: .05s all ease-in-out;
+}
+
 
 
 .dead-goblin {
@@ -212,6 +234,28 @@ p {
     -webkit-box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
     -moz-box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
     transition: 1s all ease-in-out;
+    animation: myAnim 1s ease-in-out 0s 1 normal forwards;
+    
+
+}
+
+.miss-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    padding: 10px;
+    background-color: black;
+    border-radius: 6px;
+    border: 8px dotted white;
+    text-shadow: 4px 4px 3px rgb(65, 49, 65);
+    color:white;
+    box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
+    -webkit-box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
+    -moz-box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
+    transition: 1s all ease-in-out;
+    animation: myAnim2 2s ease-in-out 0s 1 normal forwards;
     
 
 }
@@ -232,6 +276,8 @@ p {
     -webkit-box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
     -moz-box-shadow: 21px 25px 20px 1px rgba(0,0,0,1);
     transition: 1s all ease-in-out;
+    animation: myAnim3 2s ease-in-out 0s 1 normal forwards;
+    
 }
 
 
@@ -278,3 +324,132 @@ footer {
     background-color: var(--footer-background);
 }
 
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+		transform: translateX(-30px) rotate(-6deg);
+	}
+
+	30% {
+		transform: translateX(15px) rotate(6deg);
+	}
+
+	45% {
+		transform: translateX(-15px) rotate(-3.6deg);
+	}
+
+	60% {
+		transform: translateX(9px) rotate(2.4deg);
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(-1.2deg);
+	}
+}
+
+
+
+@keyframes myAnim3 {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+}
+
+@keyframes myAnim2 {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-10px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateX(10px);
+	}
+
+	80% {
+		transform: translateX(8px);
+	}
+
+	90% {
+		transform: translateX(-8px);
+	}
+}
+
+@keyframes myAnimfight {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes myAnimheader {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
