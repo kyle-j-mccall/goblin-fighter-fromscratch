@@ -12,8 +12,7 @@ const playerHpEl = document.querySelector('#player-hp');
 const hitMessageContainer = document.querySelector('.message-container');
 const playerAvatar = document.querySelector('.player-avatar');
 const newGameButtonContainer = document.querySelector('.new-game-container');
-const playerContainer = document.querySelector('.player-container');
-const playerGrid = document.querySelector('.bottom-grid');
+
 
 
 
