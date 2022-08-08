@@ -84,7 +84,7 @@ function displayGoblins() {
 
             }
 
-            if (Math.random() * .7) {
+            if (Math.random() > .7) {
                 playerHp--;
                
                 playerHpEl.textContent = playerHp;
