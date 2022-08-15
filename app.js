@@ -84,7 +84,7 @@ function displayGoblins() {
 
             }
 
-            if (Math.random() > .7) {
+            if (Math.random() > .5) {
                 playerHp--;
                 alert("You've been hit!");
                 playerHpEl.textContent = playerHp;
